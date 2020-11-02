@@ -1,0 +1,25 @@
+<p>
+  ag-grid Load Test
+</p>
+<br><br>
+
+<input class="btn btn-primary" [attr.disabled]="loadBtnDisabled ? 'disabled' : null" type="button" (click)="doLoad()" value="Start Load and Render Data" style="cursor: pointer">
+
+<br><br>
+
+{{gridLoadedMessage}}
+
+<br><br>
+
+<ag-grid-angular #agGrid
+    style="width: 100%; height: 500px;" 
+    class="ag-theme-balham"
+    [rowData]="rowData" 
+    [columnDefs]="columnDefs"
+    [enableSorting]="true"
+    [enableFilter]="true"
+    rowSelection="multiple"
+    (modelUpdated)="onModelUpdated($event)"
+    [gridOptions]="gridOptions"
+    >
+</ag-grid-angular>
